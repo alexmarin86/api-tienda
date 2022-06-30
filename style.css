@@ -19,6 +19,9 @@ h1 {
 h2 {
 	margin-bottom: 1em;
 }
+.aviso {
+	color: tomato;
+}
 .fila {
 	display: flex;
 	flex-flow: row wrap;
