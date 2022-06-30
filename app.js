@@ -31,19 +31,22 @@ const mostrarCategorias = async () => {
 		check.addEventListener('click', filtrarProductos)
 	})
 }
+const generarHtmlProductos = (listadoProductos) => {
+	listadoProductos.forEach((producto) => {
+		elemListaProductos.innerHTML += `
+			<article>
+				<h2>${producto.title}</h2>
+				<img src=${producto.image} alt =${producto.title}>
+				<p>${producto.description}</p>
+				<strong>${producto.price}€</strong>
+			</article>
+		`
+	})
+}
 
 const mostrarProductos = async () => {
 	const productos = await obtenerProductos()
-	productos.forEach((producto) => {
-		elemListaProductos.innerHTML += `
-            <article>
-                <h2>${producto.title}</h2>
-                <img src=${producto.image} alt =${producto.title}>
-                <p>${producto.description}</p>
-                <strong>${producto.price}€</strong>
-            </article>
-        `
-	})
+	generarHtmlProductos(productos)
 }
 
 const filtrarProductos = async (e) => {
@@ -64,16 +67,7 @@ const filtrarProductos = async (e) => {
 	const productosFiltrados = productos.filter((producto) => {
 		return categoriasSeleccionadas.includes(producto.category)
 	})
-	productosFiltrados.forEach((producto) => {
-		elemListaProductos.innerHTML += `
-            <article>
-                <h2>${producto.title}</h2>
-                <img src=${producto.image} alt =${producto.title}>
-                <p>${producto.description}</p>
-                <strong>${producto.price}€</strong>
-            </article>
-        `
-	})
+	generarHtmlProductos(productosFiltrados)
 	categoriasSeleccionadas = []
 }
 
