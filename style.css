@@ -78,7 +78,7 @@ article {
 }
 .img-wrapper span {
 	position: absolute;
-	top: 70%;
+	bottom: 30%;
 	right: 0;
 	z-index: 1;
 	transform: translateX(101%);
@@ -87,7 +87,7 @@ article {
 	user-select: none;
 	padding: 0.4em 0.6em;
 	transition: var(--transicion);
-	border-radius: 0.5em 0 0 0.5em;
+	clip-path: polygon(5% 0, 100% 0, 100% 100%, 5% 100%, 0 50%);
 }
 .img-wrapper:hover span {
 	transform: translateX(0%);
