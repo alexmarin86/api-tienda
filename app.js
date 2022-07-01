@@ -36,7 +36,10 @@ const generarHtmlProductos = (listadoProductos) => {
 		elemListaProductos.innerHTML += `
 			<article>
 				<h2>${producto.title}</h2>
-				<img src=${producto.image} alt =${producto.title}>
+				<div class="img-wrapper">
+					<img src=${producto.image} alt =${producto.title}>
+					<span class="btn-comprar">¡Lo quiero!</span>
+				</div>
 				<p>${producto.description}</p>
 				<strong>${producto.price}€</strong>
 			</article>
