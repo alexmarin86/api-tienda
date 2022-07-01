@@ -94,6 +94,7 @@ article {
 }
 .img-wrapper span:hover {
 	color: white;
+	clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0 50%);
 }
 article strong {
 	color: var(--naranja);
